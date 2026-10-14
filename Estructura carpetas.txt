@@ -1,0 +1,64 @@
+SinteticApp/
+├── public/                     # Recursos estáticos y archivos de PWA[cite: 1]
+│   ├── icons/                  # Iconos de la aplicación (192x192, 512x512)
+│   ├── images/                 # Imágenes estáticas y logos
+│   └── manifest.json           # Configuración PWA (Progressive Web App)[cite: 1]
+├── src/
+│   ├── app/                    # Rutas y páginas (Next.js App Router)[cite: 1]
+│   │   ├── (auth)/             # Grupo de rutas para Autenticación[cite: 1]
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx    # Pantalla de Inicio de Sesión[cite: 1, 4]
+│   │   │   └── register/
+│   │   │       └── page.tsx    # Pantalla de Registro[cite: 1, 3]
+│   │   ├── superadmin/         # Módulos del SuperAdministrador[cite: 1]
+│   │   │   ├── complejos/
+│   │   │   │   └── page.tsx    # Gestión de complejos y activación de suscripciones[cite: 1]
+│   │   │   ├── pagos/
+│   │   │   │   └── page.tsx    # Control de cuotas mensuales fijas[cite: 1]
+│   │   │   ├── layout.tsx      # Layout exclusivo de SuperAdmin
+│   │   │   └── page.tsx        # Dashboard del SuperAdmin
+│   │   ├── admin/              # Módulos de Administradores de Canchas[cite: 1]
+│   │   │   ├── agenda/
+│   │   │   │   └── page.tsx    # Calendario e ingresos de sus canchas[cite: 1]
+│   │   │   ├── canchas/
+│   │   │   │   └── page.tsx    # Configuración de canchas y tarifas[cite: 1]
+│   │   │   ├── reservas/
+│   │   │   │   └── page.tsx    # Gestión de reservas manuales/presenciales[cite: 1]
+│   │   │   ├── layout.tsx      # Layout exclusivo de Admins de Canchas
+│   │   │   └── page.tsx        # Dashboard del Admin de Cancha
+│   │   ├── (cliente)/          # Interfaz para Clientes / Jugadores[cite: 1]
+│   │   │   ├── complejos/
+│   │   │   │   └── page.tsx    # Catálogo y detalle de canchas disponibles[cite: 1]
+│   │   │   ├── mis-reservas/
+│   │   │   │   └── page.tsx    # Historial e itinerario del jugador[cite: 1]
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx        # Buscador / Landing cliente
+│   │   ├── api/                # Endpoints API / Webhooks (Notificaciones Push, etc.)[cite: 1]
+│   │   │   └── push/
+│   │   │       └── route.ts
+│   │   ├── globals.css         # Estilos globales y Tailwind CSS[cite: 1]
+│   │   ├── layout.tsx          # Layout raíz (Providers, PWA setup)[cite: 1]
+│   │   └── page.tsx            # Landing Page / Redirección según rol[cite: 1, 3]
+│   ├── components/             # Componentes de UI reutilizables[cite: 1]
+│   │   ├── ui/                 # Componentes genéricos (Botones, Modales, Inputs)[cite: 1]
+│   │   ├── forms/              # Formularios (Login, Registro, Creación de reserva)[cite: 1]
+│   │   ├── calendar/           # Vistas de calendarios y selección de horas[cite: 1]
+│   │   └── shared/             # Navbar, Sidebar, Footer por rol[cite: 1]
+│   ├── lib/                    # Configuración de librerías de terceros[cite: 1]
+│   │   └── supabase/           # Clientes de Supabase (Navegador y Servidor)[cite: 1]
+│   │       ├── client.ts       # Cliente browser (createBrowserClient)[cite: 1]
+│   │       └── server.ts       # Cliente server (createServerClient + cookies)[cite: 1]
+│   ├── services/               # Lógica de conexión con DB y APIs[cite: 1]
+│   │   ├── auth.ts             # Métodos de autenticación y roles[cite: 1]
+│   │   ├── bookings.ts         # Operaciones de reservas[cite: 1]
+│   │   ├── complexes.ts        # Operaciones de complejos y suscripciones[cite: 1]
+│   │   └── notifications.ts    # Lógica para Notificaciones Push[cite: 1]
+│   ├── types/                  # Definiciones de TypeScript[cite: 1]
+│   │   └── index.ts            # Interfaces (UserRole, Complex, Court, Booking, Schedule)[cite: 1]
+│   └── middleware.ts           # Control de accesos y protección por roles (RBAC)[cite: 1]
+├── .env.local                  # Variables de entorno (Supabase Keys)[cite: 1]
+├── next.config.js              # Configuración de Next.js[cite: 1]
+├── tailwind.config.js          # Configuración de Tailwind CSS[cite: 1]
+├── postcss.config.js           # Configuración de PostCSS[cite: 1]
+├── tsconfig.json               # Configuración de TypeScript[cite: 1]
+└── package.json                # Dependencias del proyecto[cite: 1]
